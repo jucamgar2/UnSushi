@@ -1,8 +1,19 @@
 import CounterImage from "../common/CounterImage";
 import AddButton from "../common/AddButton";
 import QuitButton from "../common/QuitButton";
+import { useState } from "react";
 
 const SimpleCounter = () => {
+    const [count, setCount] = useState(0);
+
+    const addToCount = () => {
+        setCount(previousCount => previousCount + 1);
+    }
+
+    const quitFromCount = () => {
+        setCount(count - 1);
+    }
+
     return <>
         <header className="simple-counter">
             <h1>Un sushi</h1>
@@ -15,12 +26,12 @@ const SimpleCounter = () => {
         <CounterImage />
 
         <div className="counter-container">
-            <p>0</p>
+            <p>{count}</p>
         </div>
 
         <div className="button-container">
-            <AddButton/>
-            <QuitButton/>
+            <AddButton callback={addToCount}/>
+            <QuitButton callback={quitFromCount}/>
         </div>
     </>
 }

@@ -1,5 +1,5 @@
-const QuitButton = () => {
-    return <button className="common-button quit"> - </button>
+const QuitButton = ({callback}) => {
+    return <button onClick={callback} className="common-button quit"> - </button>
 }
 
 export default QuitButton;

@@ -1,6 +1,6 @@
-const AddButton = () => {
+const AddButton = ({callback}) => {
 
-    return <button className="common-button add"> + </button>
+    return <button onClick={callback} className="common-button add"> + </button>
 }
 
 export default AddButton;
