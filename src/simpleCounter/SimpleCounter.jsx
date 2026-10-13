@@ -1,18 +1,41 @@
 import CounterImage from "../common/CounterImage";
 import AddButton from "../common/AddButton";
 import QuitButton from "../common/QuitButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const SimpleCounter = () => {
     const [count, setCount] = useState(0);
 
+    const updateStorage = (newCount) => {
+        localStorage.setItem('Date', new Date())
+        localStorage.setItem('SimpleCounter', newCount);
+    }
+
     const addToCount = () => {
-        setCount(previousCount => previousCount + 1);
+        const newCount = count + 1;
+        setCount(newCount);
+        updateStorage(newCount);
     }
 
     const quitFromCount = () => {
-        setCount(count - 1);
+        const newCount = count - 1;
+        setCount(newCount);
+        updateStorage(newCount);
     }
+
+    useEffect(()=>{
+        let storageDate = localStorage.getItem('Date');
+        if(storageDate){
+            const now = Date.now();
+            const elapsedTime = now - Number(storageDate);
+            if(elapsedTime > 24 * 60 * 60 * 1000){
+                localStorage.removeItem('Date');
+                localStorage.removeItem('SimpleCounter');
+            }
+        }
+        let simpleCounter = localStorage.getItem('SimpleCounter');
+        setCount(simpleCounter ? Number(simpleCounter) : 0);
+    }, [])
 
     return <>
         <header className="simple-counter">
@@ -23,7 +46,7 @@ const SimpleCounter = () => {
             <h3>Modo simple</h3>
         </div>
         
-        <CounterImage />
+        <CounterImage count={count} />
 
         <div className="counter-container">
             <p>{count}</p>
