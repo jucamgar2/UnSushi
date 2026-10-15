@@ -18,7 +18,7 @@ const SimpleCounter = () => {
     }
 
     const quitFromCount = () => {
-        const newCount = count - 1;
+        const newCount = count - 1 > 0 ? count -1 : 0;
         setCount(newCount);
         updateStorage(newCount);
     }
