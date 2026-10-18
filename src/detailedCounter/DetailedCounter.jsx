@@ -3,7 +3,7 @@ import SushiOption from "./SushiOption";
 import { useState, useEffect } from "react";
 
 const DetailedCounter = () => {
-    const [count, setCount] = useState(0);
+    const [detailCount, setDetailCount] = useState({counter:0});
 
     return <>
         <header className="simple-counter">
@@ -14,10 +14,10 @@ const DetailedCounter = () => {
             <h3>Modo detallado</h3>
         </div>
 
-        <CounterImage count={count} />
+        <CounterImage count={detailCount.counter} />
 
         <div className="counter-container-detail">
-            <p>{count}</p>
+            <p>{detailCount.counter}</p>
         </div>
 
         <div className="sushi-options-container">

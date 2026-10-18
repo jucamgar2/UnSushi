@@ -76,7 +76,7 @@
 }
 
 .sushi-option img {
-    height: 100px;
+    height: 75px;
 }
 
 .option-button-container {
@@ -99,4 +99,14 @@
 
 .counter-container-detail p {
     margin: 5px;
+}
+
+.option-count {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.option-count p {
+    margin: 0px;
 }
