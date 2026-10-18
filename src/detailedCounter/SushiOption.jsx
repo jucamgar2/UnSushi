@@ -8,7 +8,7 @@ const SushiOption = ({addCallback, quitCallback, imageSrc, alt, optionCount}) =>
             <img src={imageSrc} alt={alt}/>
         </div>
         <div className="option-count">
-            <p>0</p>
+            <p>{optionCount}</p>
         </div>
         <div className="option-button-container">
             <AddButton callback={addCallback}/>
