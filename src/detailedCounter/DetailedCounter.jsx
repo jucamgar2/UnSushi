@@ -52,7 +52,7 @@ const DetailedCounter = () => {
             const updated = {
                 ...prev,
                 maki: (prev.maki??0) + 1,
-                counter: (prev.counter??0) + 1
+                counter: (prev.counter ?? 0) + 1
             };
             updateStorage(detailCount);
             return updated;
@@ -60,9 +60,15 @@ const DetailedCounter = () => {
     }
 
     const quitMaki = () => {
-        detailCount.maki = detailCount.maki ? detailCount.maki : 0;
-        detailCount.maki--;
-        updateStorage(detailCount);
+        setDetailCount(prev => {
+            const updated = {
+                ...prev,
+                maki: (prev.maki ?? 0) > 0 ? prev.maki - 1 : 0,
+                counter: (prev.maki ?? 0) > 0 ? prev.counter - 1 : (prev.counter ?? 0)
+            };
+            updateStorage(detailCount);
+            return updated;
+        })
     }
 
     return <>
