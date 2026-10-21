@@ -21,7 +21,6 @@ const DetailedCounter = () => {
                 localStorage.removeItem('DetailedCounter');
             }
         }
-        let detailedCounter = localStorage.getItem('DetailedCounter');
         const newDetailedCounter = {
             counter:0,
             maki:0,
@@ -31,13 +30,33 @@ const DetailedCounter = () => {
             bao:0,
             other:0
         };
-        setDetailCount(detailedCounter ? detailedCounter : newDetailedCounter);
+
+        const storedCounter = localStorage.getItem('DetailedCounter');
+        if(storedCounter) {
+            try {
+                setDetailCount({
+                    ...newDetailedCounter,
+                    ...JSON.parse(storedCounter)
+                });
+            } catch (error) {
+                console.error('Failed to load the DetailedCounter: ', error);
+                setDetailCount(newDetailedCounter);
+            }
+        } else {
+            setDetailCount(newDetailedCounter);
+        }
     }, []);
 
     const addMaki = () => {
-        detailCount.maki = detailCount.maki ? detailCount.maki : 0;
-        detailCount.maki++;
-        updateStorage(detailCount);
+        setDetailCount(prev => {
+            const updated = {
+                ...prev,
+                maki: (prev.maki??0) + 1,
+                counter: (prev.counter??0) + 1
+            };
+            updateStorage(detailCount);
+            return updated;
+        })
     }
 
     const quitMaki = () => {
