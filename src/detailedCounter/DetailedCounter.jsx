@@ -203,7 +203,7 @@ const DetailedCounter = () => {
         <CounterImage count={detailCount.counter} />
 
         <div className="counter-container-detail">
-            <p>{detailCount.counter}</p>
+            <p id="detailed-counter">{detailCount.counter}</p>
         </div>
 
         <div className="sushi-options-container">
