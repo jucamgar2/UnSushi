@@ -27,7 +27,7 @@ const SimpleCounter = () => {
         let storageDate = localStorage.getItem('Date');
         if(storageDate){
             const now = Date.now();
-            const elapsedTime = now - Number(storageDate);
+            const elapsedTime = Number(now) - new Date(storageDate).getTime();
             if(elapsedTime > 24 * 60 * 60 * 1000){
                 localStorage.removeItem('Date');
                 localStorage.removeItem('SimpleCounter');
