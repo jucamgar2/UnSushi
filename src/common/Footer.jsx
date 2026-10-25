@@ -9,13 +9,13 @@ const Footer = () => {
 
     return (
         <footer className="footer-container">
-            <Link to="/" onClick={() => setPage("Simple")}>
+            <Link to="/">
                 <div>
                     {inDetail && <ArrowUpOnSquareIcon className="icon"/>}
                     {!inDetail && <ArrowUpOnSquareIcon className="icon-shadow"/>}
                 </div>
             </Link>
-            <Link to="/detail" onClick={() => setPage("Detail")}>
+            <Link to="/detail">
                 <div>
                     {!inDetail && <ArrowUpOnSquareStackIcon className="icon"/>}
                     {inDetail && <ArrowUpOnSquareStackIcon className="icon-shadow"/>}
