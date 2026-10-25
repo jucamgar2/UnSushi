@@ -110,3 +110,30 @@
 .option-count p {
     margin: 0px;
 }
+
+.footer-container {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgb(238, 133, 58);
+    display: flex;
+    justify-content: space-around;
+    height: 45px;
+    align-items: center;
+}
+
+.footer-container a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.icon {
+    width: 30px;
+}
+
+.icon-shadow {
+    width: 30px;
+    color: rgb(54, 26, 5);
+}
