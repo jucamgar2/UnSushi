@@ -7,7 +7,7 @@ const DetailedCounter = () => {
 
     const updateStorage = (newCount) => {
         localStorage.setItem('Date', new Date())
-        localStorage.setItem('DetailedCounter', newCount);
+        localStorage.setItem('DetailedCounter', JSON.stringify(newCount));
     }
 
     useEffect(()=>{
@@ -16,7 +16,6 @@ const DetailedCounter = () => {
             const now = Date.now();
             const elapsedTime = Number(now) - new Date(storageDate).getTime();
             if(elapsedTime > 24 * 60 * 60 * 1000){
-
                 localStorage.removeItem('Date');
                 localStorage.removeItem('DetailedCounter');
             }
@@ -34,12 +33,15 @@ const DetailedCounter = () => {
         const storedCounter = localStorage.getItem('DetailedCounter');
         if(storedCounter) {
             try {
+                const parsedCounter = JSON.parse(storedCounter)
                 setDetailCount({
                     ...newDetailedCounter,
-                    ...JSON.parse(storedCounter)
+                    ...parsedCounter
                 });
             } catch (error) {
                 console.error('Failed to load the DetailedCounter: ', error);
+                localStorage.removeItem('Date');
+                localStorage.removeItem('DetailedCounter');
                 setDetailCount(newDetailedCounter);
             }
         } else {
@@ -54,7 +56,7 @@ const DetailedCounter = () => {
                 maki: (prev.maki??0) + 1,
                 counter: (prev.counter ?? 0) + 1
             };
-            updateStorage(detailCount);
+            updateStorage(updated);
             return updated;
         })
     }
@@ -66,7 +68,7 @@ const DetailedCounter = () => {
                 maki: (prev.maki ?? 0) > 0 ? prev.maki - 1 : 0,
                 counter: (prev.maki ?? 0) > 0 ? prev.counter - 1 : (prev.counter ?? 0)
             };
-            updateStorage(detailCount);
+            updateStorage(updated);
             return updated;
         })
     }
@@ -78,7 +80,7 @@ const DetailedCounter = () => {
                 uramaki: (prev.uramaki??0) + 1,
                 counter: (prev.counter ?? 0) + 1
             };
-            updateStorage(detailCount);
+            updateStorage(updated);
             return updated;
         })
     }
@@ -90,7 +92,7 @@ const DetailedCounter = () => {
                 uramaki: (prev.uramaki ?? 0) > 0 ? prev.uramaki - 1 : 0,
                 counter: (prev.uramaki ?? 0) > 0 ? prev.counter - 1 : (prev.counter ?? 0)
             };
-            updateStorage(detailCount);
+            updateStorage(updated);
             return updated;
         })
     }
@@ -102,7 +104,7 @@ const DetailedCounter = () => {
                 niguiri: (prev.niguiri??0) + 1,
                 counter: (prev.counter ?? 0) + 1
             };
-            updateStorage(detailCount);
+            updateStorage(updated);
             return updated;
         })
     }
@@ -114,7 +116,7 @@ const DetailedCounter = () => {
                 niguiri: (prev.niguiri ?? 0) > 0 ? prev.niguiri - 1 : 0,
                 counter: (prev.niguiri ?? 0) > 0 ? prev.counter - 1 : (prev.counter ?? 0)
             };
-            updateStorage(detailCount);
+            updateStorage(updated);
             return updated;
         })
     }
@@ -126,7 +128,7 @@ const DetailedCounter = () => {
                 temaki: (prev.temaki??0) + 1,
                 counter: (prev.counter ?? 0) + 1.5
             };
-            updateStorage(detailCount);
+            updateStorage(updated);
             return updated;
         })
     }
@@ -138,7 +140,7 @@ const DetailedCounter = () => {
                 temaki: (prev.temaki ?? 0) > 0 ? prev.temaki - 1 : 0,
                 counter: (prev.temaki ?? 0) > 0 ? prev.counter - 1.5 : (prev.counter ?? 0)
             };
-            updateStorage(detailCount);
+            updateStorage(updated);
             return updated;
         })
     }
@@ -150,7 +152,7 @@ const DetailedCounter = () => {
                 bao: (prev.bao??0) + 1,
                 counter: (prev.counter ?? 0) + 2
             };
-            updateStorage(detailCount);
+            updateStorage(updated);
             return updated;
         })
     }
@@ -162,7 +164,7 @@ const DetailedCounter = () => {
                 bao: (prev.bao ?? 0) > 0 ? prev.bao - 1 : 0,
                 counter: (prev.bao ?? 0) > 0 ? prev.counter - 2 : (prev.counter ?? 0)
             };
-            updateStorage(detailCount);
+            updateStorage(updated);
             return updated;
         })
     }
@@ -174,7 +176,7 @@ const DetailedCounter = () => {
                 other: (prev.other??0) + 1,
                 counter: (prev.counter ?? 0) + 1
             };
-            updateStorage(detailCount);
+            updateStorage(updated);
             return updated;
         })
     }
@@ -186,7 +188,7 @@ const DetailedCounter = () => {
                 other: (prev.other ?? 0) > 0 ? prev.other - 1 : 0,
                 counter: (prev.other ?? 0) > 0 ? prev.counter - 1 : (prev.counter ?? 0)
             };
-            updateStorage(detailCount);
+            updateStorage(updated);
             return updated;
         })
     }
