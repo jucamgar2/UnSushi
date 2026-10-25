@@ -37,8 +37,9 @@
 
 .counter-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     font-size: 70px;
+    align-items: center;
 } 
 
 .counter-container p {
@@ -136,4 +137,8 @@
 .icon-shadow {
     width: 30px;
     color: rgb(54, 26, 5);
+}
+
+.restart {
+    background-color: rgb(32, 32, 218);
 }
