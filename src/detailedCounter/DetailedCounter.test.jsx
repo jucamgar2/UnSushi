@@ -249,6 +249,8 @@ describe('SushiOption', () => {
     })
 
     it("should aument counter and uramaki when we pulse add",async () => {
+        localStorage.removeItem('Date');
+        localStorage.removeItem('DetailedCounter');
         render(<DetailedCounter/>);
         const user = userEvent.setup();
         let uramakis = document.getElementById('Uramaki');
@@ -357,6 +359,8 @@ describe('SushiOption', () => {
     })
 
     it("should aument counter and niguiri when we pulse add",async () => {
+        localStorage.removeItem('Date');
+        localStorage.removeItem('DetailedCounter');
         render(<DetailedCounter/>);
         const user = userEvent.setup();
         let niguiri = document.getElementById('Niguiri');
@@ -465,6 +469,8 @@ describe('SushiOption', () => {
     })
 
     it("should aument counter and temaki when we pulse add",async () => {
+        localStorage.removeItem('Date');
+        localStorage.removeItem('DetailedCounter');
         render(<DetailedCounter/>);
         const user = userEvent.setup();
         let temaki = document.getElementById('Temaki');
@@ -572,6 +578,8 @@ describe('SushiOption', () => {
     })
 
     it("should aument counter and bao when we pulse add",async () => {
+        localStorage.removeItem('Date');
+        localStorage.removeItem('DetailedCounter');
         render(<DetailedCounter/>);
         const user = userEvent.setup();
         let bao = document.getElementById('Bao');
@@ -679,6 +687,8 @@ describe('SushiOption', () => {
     })
 
     it("should aument counter and other when we pulse add",async () => {
+        localStorage.removeItem('Date');
+        localStorage.removeItem('DetailedCounter');
         render(<DetailedCounter/>);
         const user = userEvent.setup();
         let other = document.getElementById('Other');
