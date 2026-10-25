@@ -1,6 +1,7 @@
 import CounterImage from "../common/CounterImage";
 import AddButton from "../common/AddButton";
 import QuitButton from "../common/QuitButton";
+import RestartButton from "../common/RestartButton";
 import { useState, useEffect } from "react";
 
 const SimpleCounter = () => {
@@ -37,6 +38,11 @@ const SimpleCounter = () => {
         setCount(simpleCounter ? Number(simpleCounter) : 0);
     }, [])
 
+    const restartSimpleCounter = () => {
+        localStorage.removeItem('SimpleCounter')
+        setCount(0);
+    }
+
     return <>
         <header className="simple-counter">
             <h1>Un sushi</h1>
@@ -49,6 +55,7 @@ const SimpleCounter = () => {
         <CounterImage count={count} />
 
         <div className="counter-container">
+            <RestartButton callback={restartSimpleCounter} />
             <p>{count}</p>
         </div>
 
