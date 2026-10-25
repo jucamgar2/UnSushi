@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router";
-import { useState } from "react";
 import { ArrowUpOnSquareStackIcon, ArrowUpOnSquareIcon } from "@heroicons/react/16/solid";
 
 const Footer = () => {
