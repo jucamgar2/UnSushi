@@ -3,7 +3,6 @@ import { useState } from "react";
 import { ArrowUpOnSquareStackIcon, ArrowUpOnSquareIcon } from "@heroicons/react/16/solid";
 
 const Footer = () => {
-    const [page, setPage] = useState("Simple")
 
     const location = useLocation();
     const inDetail = location.pathname.startsWith('/detail');
