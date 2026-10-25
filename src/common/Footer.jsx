@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router";
 import { useState } from "react";
 import { ArrowUpOnSquareStackIcon, ArrowUpOnSquareIcon } from "@heroicons/react/16/solid";
-import { ArrowUpOnSquareStackIcon as ArrowUpOnSquareStackIconOutline,  ArrowUpOnSquareIcon as ArrowUpOnSquareIconOutline} from "@heroicons/react/24/outline";
 
 const Footer = () => {
     const [page, setPage] = useState("Simple")
