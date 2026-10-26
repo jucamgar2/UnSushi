@@ -83,4 +83,28 @@ describe('SimpleCounter', () => {
         expect(counter).toBeInTheDocument();
         expect(counter).toHaveTextContent('4');
     });
+
+    it('should show the more info when the button is clicked', async () => {
+        const user = userEvent.setup();
+        render(<SimpleCounter/>);
+        let btInfo = document.getElementsByClassName("common-button bt-info")[0];
+        await user.click(btInfo);
+        let info = document.getElementsByClassName("more-info")[0];
+        expect(info).toBeInTheDocument();
+    })
+
+    it('should restart the counter when the button is clicked', async () => {
+        const user = userEvent.setup();
+        localStorage.setItem('SimpleCounter', 10);
+        localStorage.setItem('Date', Date.now());
+        render(<SimpleCounter/>);
+        let counter = document.querySelector('p');
+        expect(counter).toBeInTheDocument();
+        expect(counter).toHaveTextContent('10');
+        let btRestart = document.getElementsByClassName("common-button restart")[0];
+        await user.click(btRestart);
+        counter = document.querySelector('p');
+        expect(counter).toBeInTheDocument();
+        expect(counter).toHaveTextContent('0');
+    })
 });
