@@ -94,8 +94,9 @@
 
 .counter-container-detail {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     font-size: 70px;
+    align-items: center;
 } 
 
 .counter-container-detail p {

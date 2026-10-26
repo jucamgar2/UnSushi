@@ -1,4 +1,5 @@
 import CounterImage from "../common/CounterImage";
+import RestartButton from "../common/RestartButton";
 import SushiOption from "./SushiOption";
 import { useState, useEffect } from "react";
 
@@ -193,6 +194,20 @@ const DetailedCounter = () => {
         })
     }
 
+    const restartDetailedCounter = () => {
+        localStorage.removeItem("DetailedCounter");
+        const newDetailedCounter = {
+            counter:0,
+            maki:0,
+            uramaki:0,
+            niguiri:0,
+            temaki:0,
+            bao:0,
+            other:0
+        };
+        setDetailCount(newDetailedCounter);
+    }
+
     return <>
         <header className="simple-counter">
             <h1>Un sushi</h1>
@@ -205,6 +220,7 @@ const DetailedCounter = () => {
         <CounterImage count={detailCount.counter} />
 
         <div className="counter-container-detail">
+            <RestartButton callback={restartDetailedCounter}/>
             <p id="detailed-counter">{detailCount.counter}</p>
         </div>
 
