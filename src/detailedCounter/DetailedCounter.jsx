@@ -1,6 +1,8 @@
 import CounterImage from "../common/CounterImage";
+import RestartButton from "../common/RestartButton";
 import SushiOption from "./SushiOption";
 import { useState, useEffect } from "react";
+import ButtonInfo from "../common/ButtonInfo";
 
 const DetailedCounter = () => {
     const [detailCount, setDetailCount] = useState({counter:0});
@@ -193,6 +195,20 @@ const DetailedCounter = () => {
         })
     }
 
+    const restartDetailedCounter = () => {
+        localStorage.removeItem("DetailedCounter");
+        const newDetailedCounter = {
+            counter:0,
+            maki:0,
+            uramaki:0,
+            niguiri:0,
+            temaki:0,
+            bao:0,
+            other:0
+        };
+        setDetailCount(newDetailedCounter);
+    }
+
     return <>
         <header className="simple-counter">
             <h1>Un sushi</h1>
@@ -205,7 +221,9 @@ const DetailedCounter = () => {
         <CounterImage count={detailCount.counter} />
 
         <div className="counter-container-detail">
+            <RestartButton callback={restartDetailedCounter}/>
             <p id="detailed-counter">{detailCount.counter}</p>
+            <ButtonInfo information={"En este modo las piezas tienen distintos valores ya que no ocupa el mismo espacio un bao que un maki"}/>
         </div>
 
         <div className="sushi-options-container">

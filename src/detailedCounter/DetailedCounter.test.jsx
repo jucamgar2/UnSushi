@@ -794,4 +794,37 @@ describe('SushiOption', () => {
         expect(otherCount).toBeInTheDocument();
         expect(otherCount).toHaveTextContent('0');
     })
+
+    it('should show the more info when the button is clicked', async () => {
+        const user = userEvent.setup();
+        render(<DetailedCounter/>);
+        let btInfo = document.getElementsByClassName("common-button bt-info")[0];
+        await user.click(btInfo);
+        let info = document.getElementsByClassName("more-info")[0];
+        expect(info).toBeInTheDocument();
+    })
+
+    it('should restart the counter when the button is clicked', async () => {
+        localStorage.setItem('Date', new Date());
+        const detailedCounter = {
+            counter:12,
+            maki:3,
+            uramaki:3,
+            niguiri:2,
+            temaki:2,
+            bao:1,
+            other:0
+        }
+        localStorage.setItem('DetailedCounter', JSON.stringify(detailedCounter));
+        const user = userEvent.setup();
+        render(<DetailedCounter/>);
+        let counter = document.getElementById('detailed-counter');
+        expect(counter).toBeInTheDocument();
+        expect(counter).toHaveTextContent('12');
+        let btRestart = document.getElementsByClassName("common-button restart")[0];
+        await user.click(btRestart);
+        counter = document.getElementById('detailed-counter');
+        expect(counter).toBeInTheDocument();
+        expect(counter).toHaveTextContent('0');
+    })
 });

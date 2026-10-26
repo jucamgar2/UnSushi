@@ -37,8 +37,9 @@
 
 .counter-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     font-size: 70px;
+    align-items: center;
 } 
 
 .counter-container p {
@@ -93,8 +94,9 @@
 
 .counter-container-detail {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     font-size: 70px;
+    align-items: center;
 } 
 
 .counter-container-detail p {
@@ -136,4 +138,38 @@
 .icon-shadow {
     width: 30px;
     color: rgb(54, 26, 5);
+}
+
+.restart {
+    background-color: rgb(32, 32, 218);
+}
+
+.container-info {
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.more-info {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    max-width: calc(100vw - 40px);
+    padding: 20px;
+    background: white;
+    color: #222;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    font-size: 16px;
+}
+
+.bt-info {
+    border-color: black;
+    border: 1px;
+    color: black;
 }
