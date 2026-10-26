@@ -3,6 +3,7 @@ import AddButton from "../common/AddButton";
 import QuitButton from "../common/QuitButton";
 import RestartButton from "../common/RestartButton";
 import { useState, useEffect } from "react";
+import ButtonInfo from "../common/ButtonInfo";
 
 const SimpleCounter = () => {
     const [count, setCount] = useState(0);
@@ -57,6 +58,7 @@ const SimpleCounter = () => {
         <div className="counter-container">
             <RestartButton callback={restartSimpleCounter} />
             <p>{count}</p>
+            <ButtonInfo information={"En este modo todas las piezas cuentan lo mismo"}/>
         </div>
 
         <div className="button-container">
