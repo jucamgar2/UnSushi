@@ -173,3 +173,43 @@
     border: 1px;
     color: black;
 }
+
+.resume-line {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+    height: 80px;
+    border-bottom: 1px solid #222;
+}
+
+.total-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 22px;
+    font-weight: bold;
+    height: 80px;
+    border-top: 2px solid #222;
+}
+
+.empty-line-space {
+    width: 80px;
+}
+
+.resume-line img {
+    max-width: 80px;
+    min-width: 80px;
+    max-height: 78px;
+}
+
+.resume-line-label {
+    width: 100px;
+}
+
+.resume-line-quantity {
+    display: flex;
+    width: 20px;
+    justify-content: right;
+}
