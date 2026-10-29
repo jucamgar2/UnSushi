@@ -60,7 +60,7 @@ const ResumeDetail = () => {
             <ResumeLine imgSrc={"../bao.png"} alt={"Bao"} quantity={detailCount.bao}/>
             <ResumeLine imgSrc={"../other.png"} alt={"Otro"} quantity={detailCount.other}/>
         </div>
-        <div className="total-line">
+        <div id="total" className="total-line">
             <div className="empty-line-space"></div>
             <div className="resume-line-label">
                 <p>TOTAL:</p>

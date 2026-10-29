@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import DetailedCounter from './DetailedCounter';
 
-describe('SushiOption', () => {
+describe('SushiDetailedCounter', () => {
     it('should render the full detailed counter page', () => {
         render(<DetailedCounter/>);
         const counter = document.getElementById('detailed-counter');
