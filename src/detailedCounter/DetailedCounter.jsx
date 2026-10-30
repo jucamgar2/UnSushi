@@ -227,12 +227,12 @@ const DetailedCounter = () => {
         </div>
 
         <div className="sushi-options-container">
-            <SushiOption addCallback={addMaki} quitCallback={quitMaki} imageSrc={"maki.png"} alt={"Maki"} optionCount={detailCount.maki}/>
-            <SushiOption addCallback={addUramaki} quitCallback={quitUramaki} imageSrc={"uramaki.png"} alt={"Uramaki"} optionCount={detailCount.uramaki}/>
-            <SushiOption addCallback={addNiguiri} quitCallback={quitNiguiri} imageSrc={"niguiri.png"} alt={"Niguiri"} optionCount={detailCount.niguiri}/>
-            <SushiOption addCallback={addTemaki} quitCallback={quitTemaki} imageSrc={"temaki.png"} alt={"Temaki"} optionCount={detailCount.temaki}/>
-            <SushiOption addCallback={addBao} quitCallback={quitBao} imageSrc={"bao.png"} alt={"Bao"} optionCount={detailCount.bao}/>
-            <SushiOption addCallback={addOther} quitCallback={quitOther} imageSrc={"other.png"} alt={"Other"} optionCount={detailCount.other}/>
+            <SushiOption addCallback={addMaki} quitCallback={quitMaki} imageSrc={"maki.webp"} alt={"Maki"} optionCount={detailCount.maki}/>
+            <SushiOption addCallback={addUramaki} quitCallback={quitUramaki} imageSrc={"uramaki.webp"} alt={"Uramaki"} optionCount={detailCount.uramaki}/>
+            <SushiOption addCallback={addNiguiri} quitCallback={quitNiguiri} imageSrc={"niguiri.webp"} alt={"Niguiri"} optionCount={detailCount.niguiri}/>
+            <SushiOption addCallback={addTemaki} quitCallback={quitTemaki} imageSrc={"temaki.webp"} alt={"Temaki"} optionCount={detailCount.temaki}/>
+            <SushiOption addCallback={addBao} quitCallback={quitBao} imageSrc={"bao.webp"} alt={"Bao"} optionCount={detailCount.bao}/>
+            <SushiOption addCallback={addOther} quitCallback={quitOther} imageSrc={"other.webp"} alt={"Other"} optionCount={detailCount.other}/>
         </div>
     
     </>

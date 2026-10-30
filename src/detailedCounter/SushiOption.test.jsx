@@ -4,7 +4,7 @@ import SushiOption from './SushiOption';
 
 describe('SushiOption', () => {
     it('should show the sushi option image', () => {
-        render(<SushiOption imageSrc={'maki.png'} alt={'Maki'}/>);
+        render(<SushiOption imageSrc={'maki.webp'} alt={'Maki'}/>);
         const image = screen.getByRole('img', { alt: 'Maki'});
         expect(image).toBeInTheDocument();
     });
