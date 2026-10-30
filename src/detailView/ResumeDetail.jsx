@@ -53,12 +53,12 @@ const ResumeDetail = () => {
         </div>
 
         <div className="resume-lines-container">
-            <ResumeLine imgSrc={"../maki.png"} alt={"Maki"} quantity={detailCount.maki}/>
-            <ResumeLine imgSrc={"../uramaki.png"} alt={"Uramaki"} quantity={detailCount.uramaki}/>
-            <ResumeLine imgSrc={"../niguiri.png"} alt={"Niguiri"} quantity={detailCount.niguiri}/>
-            <ResumeLine imgSrc={"../temaki.png"} alt={"Temaki"} quantity={detailCount.temaki}/>
-            <ResumeLine imgSrc={"../bao.png"} alt={"Bao"} quantity={detailCount.bao}/>
-            <ResumeLine imgSrc={"../other.png"} alt={"Otro"} quantity={detailCount.other}/>
+            <ResumeLine imgSrc={"../maki.webp"} alt={"Maki"} quantity={detailCount.maki}/>
+            <ResumeLine imgSrc={"../uramaki.webp"} alt={"Uramaki"} quantity={detailCount.uramaki}/>
+            <ResumeLine imgSrc={"../niguiri.webp"} alt={"Niguiri"} quantity={detailCount.niguiri}/>
+            <ResumeLine imgSrc={"../temaki.webp"} alt={"Temaki"} quantity={detailCount.temaki}/>
+            <ResumeLine imgSrc={"../bao.webp"} alt={"Bao"} quantity={detailCount.bao}/>
+            <ResumeLine imgSrc={"../other.webp"} alt={"Otro"} quantity={detailCount.other}/>
         </div>
         <div id="total" className="total-line">
             <div className="empty-line-space"></div>
