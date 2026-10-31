@@ -1,3 +1,4 @@
+import ThemeToggle from "../common/ThemeToggle";
 import ResumeLine from "./ResumeLine";
 import { useEffect, useState } from "react";
 
@@ -45,7 +46,7 @@ const ResumeDetail = () => {
 
     return <>
         <header className="simple-counter">
-            <h1>Un sushi</h1>
+            <h1>Un sushi</h1><ThemeToggle />
         </header>
 
         <div className="sub-title">

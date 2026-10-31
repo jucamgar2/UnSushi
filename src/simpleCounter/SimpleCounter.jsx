@@ -4,6 +4,7 @@ import QuitButton from "../common/QuitButton";
 import RestartButton from "../common/RestartButton";
 import { useState, useEffect } from "react";
 import ButtonInfo from "../common/ButtonInfo";
+import ThemeToggle from "../common/ThemeToggle";
 
 const SimpleCounter = () => {
     const [count, setCount] = useState(0);
@@ -46,7 +47,7 @@ const SimpleCounter = () => {
 
     return <>
         <header className="simple-counter">
-            <h1>Un sushi</h1>
+            <h1>Un sushi</h1><ThemeToggle/>
         </header>
 
         <div className="sub-title">

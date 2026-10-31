@@ -3,6 +3,7 @@ import RestartButton from "../common/RestartButton";
 import SushiOption from "./SushiOption";
 import { useState, useEffect } from "react";
 import ButtonInfo from "../common/ButtonInfo";
+import ThemeToggle from "../common/ThemeToggle";
 
 const DetailedCounter = () => {
     const [detailCount, setDetailCount] = useState({counter:0});
@@ -211,7 +212,7 @@ const DetailedCounter = () => {
 
     return <>
         <header className="simple-counter">
-            <h1>Un sushi</h1>
+            <h1>Un sushi</h1><ThemeToggle />
         </header>
 
         <div className="sub-title">
